@@ -1,4 +1,5 @@
 import numpy as np
+import keyboard
 from fluidlab.optimizer.optim import *
 from fluidlab.utils.misc import is_on_server
 if not is_on_server():

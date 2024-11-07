@@ -13,8 +13,8 @@ effectors:
       action_scale_p: (1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
       action_scale_v: (1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     mesh:
-      file: bottle.obj
-      file_vis: bottle_vis.obj
+      file: glass.obj
+      file_vis: glass_vis.obj
       scale: (0.75, 0.65, 0.75)
       euler: (0.0, 0.0, 0.0)
       material: BOTTLE
