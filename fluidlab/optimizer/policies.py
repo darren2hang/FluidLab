@@ -365,3 +365,6 @@ class TransportingPolicy(TrainablePolicy):
         self.trainable = np.full(self.comp_actions_shape[0], False)
         self.trainable[:-1] = True
 
+class BottleFlipPolicy(TrainablePolicy):
+    def __init__(self, *args, **kwargs):
+        super(BottleFlipPolicy, self).__init__(*args, **kwargs)
