@@ -153,4 +153,4 @@ class BottleFlipEnv(FluidEnv):
         #     return ActionsPolicy(comp_actions)
 
     def trainable_policy(self, optim_cfg, init_range):
-        return BottleFlipPolicy(optim_cfg, init_range, self.agent.action_dim, self.horizon_action, self.action_range)
+        return BottleFlipPolicy(optim_cfg, init_range, self.agent.action_dim, self.horizon_action, self.action_range, fix_dim=[0, 1, 2, 3, 4])
