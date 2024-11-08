@@ -3,7 +3,7 @@ params:
   collector_boundary:
     type: cube
     lower: (0.0, 0.1, 0.0)
-    upper: (1.0, 1.0, 1.0)
+    upper: (2.0, 1.0, 1.0)
 effectors:
   - type: Rigid
     params:
@@ -13,12 +13,12 @@ effectors:
       action_scale_p: (1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
       action_scale_v: (1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     mesh:
-      file: glass.obj
-      file_vis: glass_vis.obj
+      file: bottle.obj
+      file_vis: bottle_vis.obj
       scale: (0.75, 0.65, 0.75)
       euler: (0.0, 0.0, 0.0)
       material: BOTTLE
     boundary:
       type: cube
       lower: (0.05, 0.05, 0.05)
-      upper: (0.95, 0.95, 0.95)
+      upper: (1.95, 0.95, 0.95)
