@@ -18,6 +18,8 @@ class AgentInjector(Agent):
         assert isinstance(self.effectors[0], Injector)
         self.injector = self.effectors[0]
 
+        print("Particles used:", self.sim.particles_ng.used.to_numpy())
+
         self.injector.set_act_range(self.sim.particles_ng.used.to_numpy()[0])
 
     def act(self, f, f_global):
