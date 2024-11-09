@@ -62,16 +62,16 @@ class BottleFlipEnv(FluidEnv):
     def setup_bodies(self):
         self.taichi_env.add_body(
             type='nowhere',
-            n_particles=60000,
+            n_particles=10,
             material=WATER,
         )
-        # self.taichi_env.add_body(
-        #     type='cylinder',
-        #     center=(0.6, 0.6, 0.5),
-        #     height=0.2,
-        #     radius=0.18,
-        #     material=WATER,
-        # )
+        self.taichi_env.add_body(
+            type='cylinder',
+            center=(0.6, 0.6, 0.5),
+            height=0.2,
+            radius=0.18,
+            material=WATER,
+        )
 
 
     def setup_boundary(self):
