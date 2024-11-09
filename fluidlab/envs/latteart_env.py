@@ -43,7 +43,7 @@ class LatteArtEnv(FluidEnv):
 
     def setup_statics(self):
         self.taichi_env.add_static(
-            file='cup.obj',
+            file='bottle_123.obj',
             pos=(0.63, 0.42, 0.5),
             euler=(0.0, 0.0, 0.0),
             scale=(1.2, 1.2, 1.2),
@@ -52,17 +52,17 @@ class LatteArtEnv(FluidEnv):
         )
 
     def setup_bodies(self):
-        self.taichi_env.add_body(
-            type='nowhere',
-            n_particles=60000,
-            material=MILK,
-        )
+        # self.taichi_env.add_body(
+        #     type='nowhere',
+        #     n_particles=60000,
+        #     material=MILK,
+        # )
         self.taichi_env.add_body(
             type='cylinder',
             center=(0.5, 0.55, 0.5),
             height=0.1,
             radius=0.42,
-            material=COFFEE,
+            material=WATER,
         )
 
     def setup_boundary(self):
