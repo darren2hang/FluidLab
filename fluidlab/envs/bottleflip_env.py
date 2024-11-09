@@ -79,7 +79,7 @@ class BottleFlipEnv(FluidEnv):
             type='cylinder',
             xz_radius=0.25,
             xz_center=(0.6, 0.5),
-            y_range=(-0.5, 0.95),
+            y_range=(-1, 0.95),
         )
         # self.taichi_env.setup_boundary(
         #     type='cube',
