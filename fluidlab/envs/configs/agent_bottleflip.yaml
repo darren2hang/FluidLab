@@ -30,7 +30,7 @@ effectors:
       action_scale_v: (1.0, 1.0, 1.0)
       locally_random: True
     mesh:
-      file: pitcher.obj
+      file: bottle_123.obj
       pos: (0.14, 0.03, 0.0)
       euler: (90.0, -15.0, 90.0)
       scale: (0.25, 0.25, 0.25)
