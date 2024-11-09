@@ -50,19 +50,19 @@ class BottleFlipEnv(FluidEnv):
         #     material=CUP,
         #     has_dynamics=True,
         # )
+        self.taichi_env.add_static(
+            file='bottle_123.obj',
+            euler=(0.0, 0.0, 0.0),
+            scale=(0.75, 0.65, 0.75),
+            material=BOTTLE,
+            has_dynamics=True,
+        )
 
     def setup_bodies(self):
         self.taichi_env.add_body(
             type='nowhere',
             n_particles=60000,
             material=WATER,
-        )
-        self.taichi_env.add_body(
-            file='bottle_123.obj',
-            euler=(0.0, 0.0, 0.0),
-            scale=(0.75, 0.65, 0.75),
-            material=BOTTLE,
-            has_dynamics=True,
         )
         # self.taichi_env.add_body(
         #     type='cylinder',
