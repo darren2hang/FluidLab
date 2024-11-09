@@ -1,6 +1,6 @@
-type: AgentInjector
+type: Agent
 effectors:
-  - type: Injector
+  - type: Rigid
     params:
       radius: 0.0075
       flux: 2
