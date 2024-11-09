@@ -20,6 +20,7 @@ class AgentInjector(Agent):
 
         print("Used particles:", self.sim.particles_ng.used.to_numpy())
         print("Length of used particles:", len(self.sim.particles_ng.used.to_numpy()))
+        print(self.sim.particles_ng.used.to_numpy()[0])
 
         self.injector.set_act_range(self.sim.particles_ng.used.to_numpy()[0])
 
