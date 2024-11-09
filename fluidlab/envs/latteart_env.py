@@ -53,11 +53,11 @@ class LatteArtEnv(FluidEnv):
         pass
 
     def setup_bodies(self):
-        # self.taichi_env.add_body(
-        #     type='nowhere',
-        #     n_particles=60000,
-        #     material=MILK,
-        # )
+        self.taichi_env.add_body(
+            type='nowhere',
+            n_particles=60000,
+            material=MILK,
+        )
         self.taichi_env.add_body(
             type='cylinder',
             center=(0.5, 0.55, 0.5),
