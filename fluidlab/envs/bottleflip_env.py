@@ -62,7 +62,7 @@ class BottleFlipEnv(FluidEnv):
     def setup_bodies(self):
         self.taichi_env.add_body(
             type='nowhere',
-            n_particles=10,
+            n_particles=6000,
             material=WATER,
         )
         self.taichi_env.add_body(
