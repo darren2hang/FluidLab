@@ -53,7 +53,7 @@ class BottleFlipEnv(FluidEnv):
         self.taichi_env.add_static(
             file='bottle_123.obj',
             euler=(0.0, 0.0, 0.0),
-            scale=(0.75, 0.65, 0.75),
+            scale=(2, 1.8, 2),
             material=BOTTLE,
             has_dynamics=False,
         )
