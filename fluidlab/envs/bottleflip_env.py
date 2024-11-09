@@ -42,14 +42,14 @@ class BottleFlipEnv(FluidEnv):
         self.agent = self.taichi_env.agent
 
     def setup_statics(self):
-        pass
-        # self.taichi_env.add_static(
-        #     file='bottle.obj',
-        #     euler=(0.0, 0.0, 0.0),
-        #     scale=(0.75, 0.65, 0.75),
-        #     material=Bottle,
-        #     has_dynamics=True,
-        # )
+        # pass
+        self.taichi_env.add_static(
+            file='cup.obj',
+            euler=(0.0, 0.0, 0.0),
+            scale=(0.75, 0.65, 0.75),
+            material=CUP,
+            has_dynamics=True,
+        )
 
     def setup_bodies(self):
         # self.taichi_env.add_body(
@@ -134,37 +134,37 @@ class BottleFlipEnv(FluidEnv):
         return self.taichi_env.render(mode)
         
     def demo_policy(self, user_input=False):
-        init_p = np.array([0.6, 0.7, 0.5])
-        comp_actions_p = init_p
-        return KeyboardPolicy_wz(init_p, v_ang=0.015)
-        pass
-        # if user_input:
-        #     init_p = np.array([0.5, 0.73, 0.5])
-        #     comp_actions_p = init_p
-        #     return MousePolicy_vxz(init_p)
-        # else:
-        #     comp_actions_p = np.zeros((1, self.agent.action_dim))
-        #     comp_actions_v = np.zeros((self.horizon_action, self.agent.action_dim))
-        #     init_p = np.array([0.15, 0.65, 0.5])
-        #     x_range = 0.7
-        #     current_p = np.array(init_p)
-        #     amp_range = np.array([0.15, 0.25])
-        #     for i in range(self.horizon_action):
-        #         target_i = i + 1
-        #         target_x = init_p[0] + target_i/self.horizon_action*x_range
-        #         target_y = init_p[1]
-        #         cycles = 3
-        #         target_rad = target_i/self.horizon_action*(np.pi*2)*cycles
-        #         target_amp = amp_range[1] - np.abs((target_i*2/self.horizon_action) - 1) * (amp_range[1] - amp_range[0])
-        #         target_z = np.sin(target_rad)*target_amp+0.5
-        #         target_p = np.array([target_x, target_y, target_z])
+        # init_p = np.array([0.6, 0.7, 0.5])
+        # comp_actions_p = init_p
+        # return KeyboardPolicy_wz(init_p, v_ang=0.015)
+        # pass
+        if user_input:
+            init_p = np.array([0.5, 0.73, 0.5])
+            comp_actions_p = init_p
+            return MousePolicy_vxz(init_p)
+        else:
+            comp_actions_p = np.zeros((1, self.agent.action_dim))
+            comp_actions_v = np.zeros((self.horizon_action, self.agent.action_dim))
+            init_p = np.array([0.15, 0.65, 0.5])
+            x_range = 0.7
+            current_p = np.array(init_p)
+            amp_range = np.array([0.15, 0.25])
+            for i in range(self.horizon_action):
+                target_i = i + 1
+                target_x = init_p[0] + target_i/self.horizon_action*x_range
+                target_y = init_p[1]
+                cycles = 3
+                target_rad = target_i/self.horizon_action*(np.pi*2)*cycles
+                target_amp = amp_range[1] - np.abs((target_i*2/self.horizon_action) - 1) * (amp_range[1] - amp_range[0])
+                target_z = np.sin(target_rad)*target_amp+0.5
+                target_p = np.array([target_x, target_y, target_z])
 
-        #         comp_actions_v[i] = target_p - current_p
-        #         current_p += comp_actions_v[i]
+                comp_actions_v[i] = target_p - current_p
+                current_p += comp_actions_v[i]
 
-        #     comp_actions_p[0] = init_p
-        #     comp_actions = np.vstack([comp_actions_v, comp_actions_p])
-        #     return ActionsPolicy(comp_actions)
+            comp_actions_p[0] = init_p
+            comp_actions = np.vstack([comp_actions_v, comp_actions_p])
+            return ActionsPolicy(comp_actions)
 
     def trainable_policy(self, optim_cfg, init_range):
         return BottleFlipPolicy(optim_cfg, init_range, self.agent.action_dim, self.horizon_action, self.action_range, fix_dim=[0, 1, 2, 3, 4])
