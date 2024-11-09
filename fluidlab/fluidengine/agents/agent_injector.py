@@ -18,6 +18,7 @@ class AgentInjector(Agent):
         assert isinstance(self.effectors[0], Injector)
         self.injector = self.effectors[0]
 
+        print("Effectors[0]", self.effectors[0])
         print("Used particles:", self.sim.particles_ng.used.to_numpy())
         print("Length of used particles:", len(self.sim.particles_ng.used.to_numpy()))
         print("Particles used [0]", self.sim.particles_ng.used.to_numpy()[0])
