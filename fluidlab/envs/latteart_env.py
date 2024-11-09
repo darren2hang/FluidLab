@@ -42,14 +42,14 @@ class LatteArtEnv(FluidEnv):
         self.agent = self.taichi_env.agent
 
     def setup_statics(self):
-        # self.taichi_env.add_static(
-        #     file='bottle_123.obj',
-        #     pos=(0.63, 0.42, 0.5),
-        #     euler=(0.0, 0.0, 0.0),
-        #     scale=(1.2, 1.2, 1.2),
-        #     material=CUP,
-        #     has_dynamics=False,
-        # )
+        self.taichi_env.add_static(
+            file='cup.obj',
+            pos=(0.63, 0.42, 0.5),
+            euler=(0.0, 0.0, 0.0),
+            scale=(1.2, 1.2, 1.2),
+            material=CUP,
+            has_dynamics=False,
+        )
         pass
 
     def setup_bodies(self):
