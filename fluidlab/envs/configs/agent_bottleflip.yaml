@@ -38,8 +38,8 @@ effectors:
     boundary:
       type: cylinder
       xz_radius: 0.25
-      xz_center: (0.7, 0.5)
-      y_range: (0.0, 0.65)
+      xz_center: (0.6, 0.5)
+      y_range: (0.65, 0.65)
 # type: AgentPouring
 # params:
 #   collector_boundary:
