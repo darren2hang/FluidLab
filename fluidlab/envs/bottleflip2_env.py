@@ -9,7 +9,7 @@ from fluidlab.optimizer.policies import *
 from fluidlab.fluidengine.taichi_env import TaichiEnv
 from fluidlab.fluidengine.losses import *
 
-class PouringEnv(FluidEnv):
+class BottleFlip2Env(FluidEnv):
     def __init__(self, version, loss=True, loss_type='diff', seed=None, renderer_type='GGUI'):
 
         if seed is not None:
